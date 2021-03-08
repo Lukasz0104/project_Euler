@@ -3,3 +3,4 @@ executables/
 */*.exe
 not_working/
 *.txt
+debug.log
