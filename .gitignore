@@ -1,0 +1,5 @@
+.vscode
+executables/
+*/*.exe
+not_working/
+*.txt
