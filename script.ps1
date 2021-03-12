@@ -24,7 +24,7 @@ if (Test-Path ".\src\project_euler_$ProblemNumber.$Language")
 
 if ($Language -eq "cpp")
 {
-    New-Item ".\src\project_euler_$ProblemNumber.$Language" -Value "#include <iostream>`n`nusing namespace std;`n`nint main()`n{`n`t`n}";
+    New-Item ".\src\project_euler_$ProblemNumber.$Language" -Value "#include <iostream>`r`n`r`nusing namespace std;`r`n`r`nint main()`r`n{`r`n`t`r`n}";
 
     exit 0;
 }

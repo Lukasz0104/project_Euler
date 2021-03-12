@@ -27,7 +27,7 @@ int main()
         {1,70,54,71,83,51,54,69,16,92,33,48,61,43,52,1,89,19,67,48}
     };
 
-    int max_product = 1;
+    unsigned long long max_product = 1;
 
     //4 in a column
     for (int col=0; col<20; col++)

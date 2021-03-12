@@ -12,7 +12,6 @@ int sum_letters(int i, bool print = false)
 
     int num_of_letters = 0;
 
-    
     if (i<10)
     {
         if (print)
@@ -30,7 +29,7 @@ int sum_letters(int i, bool print = false)
         if (print)
             cout << tens[(i/10)%10 - 2] << " ";
 
-        num_of_letters += strlen(tens[ (i/10)%10 ]);
+        num_of_letters += strlen(tens[ (i/10)%10 - 2]);
         if (i%10 != 0)
         {
             if (print)
@@ -99,11 +98,13 @@ int sum_letters(int i, bool print = false)
 
 int main()
 {
+    bool print = false;
     int s = 0;
     for (int i=1; i<=1000; i++)
     {
-        cout << setw(4) << i << ": ";
-        s += sum_letters(i,1);
+        if (print)
+            cout << setw(4) << i << ": ";
+        s += sum_letters(i,print);
     }
     cout << s << endl;
     
