@@ -10,6 +10,7 @@ if ($ProblemNumber -eq 0)
 }
 
 Remove-Item .\src\*.exe -Force;
+Remove-Item .\executables\*.exe;
 
 if (Test-Path ".\src\project_euler_$ProblemNumber.$Language")
 {
