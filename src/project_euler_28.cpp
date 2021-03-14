@@ -79,7 +79,7 @@ int main()
         }
     }
 
-    unsigned long long sum = 0;
+    int sum = 0;
     for (int i=0; i<LEN; i++)
     {
         //cout << P[i][i] << " + " << P[LEN-1-i][i] << endl;
