@@ -38,7 +38,7 @@ bool is_circular_prime(unsigned int n)
     for (int i=1; i<d; i++)
     {
         int t = n/div;
-        n = ((n/10)%10) * div + t;
+        n = (n%div)*10 + t;
         if (num_of_digits(n)!=d || !is_prime(n))
             return false;
     }
@@ -48,12 +48,12 @@ bool is_circular_prime(unsigned int n)
 int main()
 {
 	int count = 1;
-    for (int i=3; i<1000; i+=2)
+    for (int i=3; i<1000000; i+=2)
     {
         if (is_prime(i) && is_circular_prime(i))
         {
             count++;
-            cout << i << endl;
+            //cout << i << endl;
         }
     }
     cout << count << endl;
