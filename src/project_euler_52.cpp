@@ -2,24 +2,30 @@
 
 using namespace std;
 
-bool is_prime(unsigned int n)
+int num_of_digits(unsigned int n)
 {
-    for (unsigned int i=2; i*i<=n; i++)
+    int c = 0;
+    do
     {
-        if (n%i==0)
-        {
-            return false;
-        }
-    }
-    return true;
+        c++;
+        n/=10;
+    } while (n);
+
+    return c;
 }
 
-bool is_permutation(int x, int y)
+bool is_permutation(unsigned int x, unsigned int y)
 {
-    int digits_x[4];
-    int digits_y[4];
+    const int sx = num_of_digits(x);
+    const int sy = num_of_digits(y);
 
-    int i = 3;
+    if (sx != sy)
+        return false;
+
+    int digits_x[sx];
+    int digits_y[sy];
+
+    int i = sx - 1;
 
     while (x)
     {
@@ -28,7 +34,7 @@ bool is_permutation(int x, int y)
         i--;
     }
 
-    i = 3;
+    i = sy - 1;
     while (y)
     {
         digits_y[i] = y%10;
@@ -36,10 +42,10 @@ bool is_permutation(int x, int y)
         i--;
     }
 
-    for (int i=0; i<4; i++)
+    for (int i=0; i<sx; i++)
     {
         bool is_p = false;
-        for (int j=0; j<4; j++)
+        for (int j=0; j<sy; j++)
         {
             if (digits_y[j] == digits_x[i])
             {
@@ -51,10 +57,10 @@ bool is_permutation(int x, int y)
             return false;
     }
 
-    for (int i=0; i<4; i++)
+    for (int i=0; i<sy; i++)
     {
         bool is_p = false;
-        for (int j=0; j<4; j++)
+        for (int j=0; j<sx; j++)
         {
             if (digits_y[i] == digits_x[j])
             {
@@ -71,16 +77,10 @@ bool is_permutation(int x, int y)
 
 int main()
 {
-	for (int i=1001; i<10000; i+=2)
+	unsigned int i = 1;
+    while (!is_permutation(i, 2*i) || !is_permutation(i, 3*i) || !is_permutation(i, 3*i) || !is_permutation(i, 4*i) || !is_permutation(i, 5*i) || !is_permutation(i, 6*i))
     {
-        if (false == is_prime(i))
-            continue;
-        for (int d = 2; i+2*d < 10000; d++)
-        {
-            if (is_permutation(i, i+d) && is_permutation(i, i+2*d) && is_prime(i+d) && is_prime(i+2*d))
-            {
-                cout << i << i+d << i+2*d << endl;
-            }
-        }
+        i++;
     }
+    cout << i << endl;
 }
