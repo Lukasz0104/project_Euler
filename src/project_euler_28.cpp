@@ -52,32 +52,32 @@ int main()
                 d++;
             k=0;
         }
-        if (0)
-        {
-            for (int i=0; i<LEN; i++)
-            {
-                for (int j=0; j<LEN; j++)
-                {
-                    cout << setw(3) << P[i][j] << " ";
-                }
-                cout << endl;
-            }
-            cout << "====================\n";
-        }
+        // if (0)
+        // {
+        //     for (int i=0; i<LEN; i++)
+        //     {
+        //         for (int j=0; j<LEN; j++)
+        //         {
+        //             cout << setw(3) << P[i][j] << " ";
+        //         }
+        //         cout << endl;
+        //     }
+        //     cout << "====================\n";
+        // }
         a++;
     }
     
-    if (0)
-    {
-        for (int i=0; i<LEN; i++)
-        {
-            for (int j=0; j<LEN; j++)
-            {
-                cout << setw(7) << P[i][j] << " ";
-            }
-            cout << endl;
-        }
-    }
+    // if (0)
+    // {
+    //     for (int i=0; i<LEN; i++)
+    //     {
+    //         for (int j=0; j<LEN; j++)
+    //         {
+    //             cout << setw(7) << P[i][j] << " ";
+    //         }
+    //         cout << endl;
+    //     }
+    // }
 
     int sum = 0;
     for (int i=0; i<LEN; i++)
